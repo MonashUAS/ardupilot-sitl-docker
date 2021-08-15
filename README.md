@@ -1,22 +1,21 @@
 ArduPilot Software-in-the-Loop Simulator Docker Container
 =========================================================
 
-The purpose of this is to run an ArduPilot SITL from within Docker.
+The purpose of this container is to run an ArduPilot SITL instance from within Docker.
+MAVProxy is included, for Gazebo support.
 
-DockerHub
+GitHub Packages Container Registry
 ---------
 
-A pre-built Docker image is available on DockerHub at:
+This repository uses GitHub Actions for CI.
 
-https://hub.docker.com/r/radarku/ardupilot-sitl
+To download a pre-built image, simply:
 
-To download it, simply:
-
-`docker pull radarku/ardupilot-sitl`
+`docker pull ghcr.io/monashuas/ardupilot-sitl-docker`
  
 and to run it:
 
-`docker run -it --rm -p 5760:5760 radarku/ardupilot-sitl`
+`docker run -it --rm -p 5760:5760 ghcr.io/monashuas/ardupilot-sitl-docker`
 
 
 Quick Start
@@ -24,14 +23,14 @@ Quick Start
 
 If you'd rather build the docker image yourself:
 
-`docker build --tag ardupilot github.com/radarku/ardupilot-sitl-docker`
+`docker build --tag ardupilot github.com/MonashUAS/ardupilot-sitl-docker`
 
 You can now use the `--build-arg` option to specify which branch or tag in the ardupilot
 repository you'd like to use. Here's an example:
 
-`docker build --tag ardupilot --build-arg COPTER_TAG=Copter-4.0.1 github.com/radarku/ardupilot-sitl-docker`
+`docker build --tag ardupilot --build-arg COPTER_TAG=Copter-4.1.0 github.com/radarku/ardupilot-sitl-docker`
 
-If no COPTER_TAG is supplied, the build will use the default defined in the Dockerfile, currently set at Copter-4.0.3
+If no COPTER_TAG is supplied, the build will use the default defined in the Dockerfile, currently set at Copter-4.1.0
 
 To run the image:
 
