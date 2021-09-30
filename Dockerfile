@@ -55,7 +55,7 @@ FROM ubuntu:focal
 ENV DEBIAN_FRONTEND=noninteractive
 
 # some required packages
-RUN apt-get update && apt-get install -y procps python-is-python3 \
+RUN apt-get update && apt-get install -y procps python-is-python3 dnsutils \
     && rm -rf /var/cache/apt/lists
 RUN apt-get purge modemmanager
 
