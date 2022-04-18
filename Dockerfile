@@ -23,11 +23,11 @@ RUN mkdir /src && chown $USER /src
 USER $USER
 
 # Now grab ArduPilot from GitHub
-RUN git clone https://github.com/ArduPilot/ardupilot.git /src/ardupilot
+RUN git clone https://github.com/MonashUAS/ardupilot.git /src/ardupilot
 WORKDIR /src/ardupilot
 
-# Checkout the latest Copter...
-RUN git checkout ${COPTER_TAG}
+# Checkout the manimi branch of ardupilot
+RUN git checkout manimi
 
 # Now start build instructions from http://ardupilot.org/dev/docs/setting-up-sitl-on-linux.html
 RUN git submodule update --init --recursive
