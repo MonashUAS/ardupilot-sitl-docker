@@ -9,11 +9,11 @@ on:
   schedule:
     - cron: '25 1 * * *'
   push:
-    branches: [ master ]
+    branches: [ MUAS_fork ]
     # Publish semver tags as releases.
     tags: [ 'v*.*.*' ]
   pull_request:
-    branches: [ master ]
+    branches: [ MUAS_fork ]
 
 env:
   # Use docker.io for Docker Hub if empty
